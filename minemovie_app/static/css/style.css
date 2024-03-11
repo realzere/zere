@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;  
+  font-size: 14px;
+}
+
+.films-list {
+  padding: 90px 0;
+}
+
+.cover {
+  color: white;
+  display: flex;
+  align-items: center;
+  min-height: 80vh;
+}
+
+#film {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+}
+
+.card img {
+  height: 150px;
+  width: 150px;
+}
+
+.main {
+  background: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
+  background-repeat: repeat;
+}
+
+.main img {
+  filter: brightness(80%);
+}
+
+.form-control:focus {
+  border-color: chocolate;
+}

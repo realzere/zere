@@ -1,0 +1,50 @@
+{% extends '../base.html' %}
+{% block content %}
+{% if user.is_authenticated %}
+<div class="film-detail">
+  <div class="cover" style="
+      background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.748)),
+        url('{{ film.url_banner }}');
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: center;
+    ">
+    <div class="container">
+      <h1>{{film.name}}</h1>
+      <p>
+        Director: <strong>{{ film.director }}</strong>
+      </p>
+      <p>Genre:
+        <strong>{{ film.genre }}</strong>
+      </p>
+      <p>Raiting: <strong>{{ film.rating }}</strong></p>
+      <p>
+        {{ film.description }}
+      </p>
+      <a href="{{film.url_film}}" class="btn btn-primary">Watch</a>
+    </div>
+  </div>
+  <div id="film">
+    <iframe
+      width="80%"
+      height="650"
+      src="{{film.url_film}}"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    ></iframe>
+  </div>
+</div>
+{% else %}
+<div class="container mt-5 mb-5">
+  <div class="card-body">
+    <div class="alert alert-dark mb-5" role="alert">
+      <p>If you want to continue, please, log in or sign up</p>
+    </div>
+    <a href="{% url 'sign_up_page' %}" class="btn btn-dark">Sign up</a>
+    <a href="{% url 'login_page' %}" class="btn btn-dark">Log in</a>
+  </div>
+</div>
+{% endif %}
+{% endblock %}
